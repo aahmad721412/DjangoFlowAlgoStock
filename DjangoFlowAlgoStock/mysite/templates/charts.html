@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+      <meta content="Responsive Bootstrap Multi-Purpose Crypto Trading User Interface" name="description" />
+        <meta name="keywords" content="crypto, Bootstrap, bitcoins, ethereum, dogecoin, iota, ripple, siacoin, exchange, trading platform, crypto trading">
+      <meta name="author" content="">
+      <title>Tradify - Responsive Crypto/Stock Trading User Interface</title>
+      <link href="{% static 'app/css/bootstrap.css' %}" rel="stylesheet" >
+      <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/font-awesome.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/animo/animate%2banimo.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/csspinner/csspinner.min.css' %}">
+      <link rel="stylesheet" href="{% static 'app/css/app.css' %}">
+      <link rel="stylesheet" href="{% static 'css/datTables.css' %}">
+      <script src="{% static 'plugins/modernizr/modernizr.js' %}"></script>
+      <script src="{% static 'plugins/fastclick/fastclick.js' %}"></script>
+
+   </head>
+   <body>
+
+
+ <div id="overlayLoader">
+    <div id="preloader">
+      <span></span>
+      <span></span>
+   </div>
+</div>
+
+
+      <section class="wrapper">
+         <nav class="navbar navbar-default navbar-top navbar-fixed-top">
+            <div class="navbar-header">
+               <a href="#" class="navbar-brand">
+                  <div class="brand-logo"><i class="fa fa-bitcoin"></i> TRADIFY</div>
+                  <div class="brand-logo-collapsed"><i class="fa fa-bitcoin"></i></div>
+               </a>
+            </div>
+            <div class="nav-wrapper">
+               <ul class="nav navbar-nav mt0">
+                  <li>
+                     <a href="#" data-toggle="aside">
+                     <em class="fa fa-align-left"></em>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right mt0">
+                  <li class="dropdown dropdown-list">
+                     <a href="#" data-toggle="dropdown" data-play="fadeIn" class="dropdown-toggle">
+                     <strong><i class="fa fa-btc"></i> Wallet</strong>
+                     </a>
+                  </li>
+                  <li class="dropdown dropdown-list">
+                     <a href="#" data-toggle="dropdown" data-play="fadeIn" class="dropdown-toggle">
+                        <em class="fa fa-bell"></em>
+                        <div class="label label-danger">3</div>
+                     </a>
+                     <ul class="dropdown-menu col-md-4 col-sm-6 col-xs-12">
+                        <li>
+                           <div class="table-responsive">
+                              <table class="table table-striped table-bordered table-hover">
+                                 <thead>
+                                    <tr>
+                                       <th>Buy/Sell</th>
+                                       <th>Progress</th>
+                                       <th>Date</th>
+                                       <th>Status</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Buy order SC</td>
+                                       <td>
+                                          <div class="progress progress-striped progress-xs">
+                                             <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success w-100-p">
+                                                <span class="sr-only">100% Complete</span>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <em class="fa fa-calendar fa-fw text-muted"></em>02/19/2018
+                                       </td>
+                                       <td class="text-center">
+                                          Complete
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>Sell order SC</td>
+                                       <td>
+                                          <div class="progress progress-striped progress-xs">
+                                             <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-danger w-50-p">
+                                                <span class="sr-only">50% Complete</span>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <em class="fa fa-calendar fa-fw text-muted"></em>02/18/2018
+                                       </td>
+                                       <td class="text-center">
+                                          50% Filled
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>Buy order IOTA</td>
+                                       <td>
+                                          <div class="progress progress-striped progress-xs">
+                                             <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success w-50-p">
+                                                <span class="sr-only">50% Complete</span>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <em class="fa fa-calendar fa-fw text-muted"></em>02/17/2018
+                                       </td>
+                                       <td class="text-center">
+                                          50% Filled
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="dropdown">
+                     <a href="#" data-toggle="dropdown" data-play="fadeIn" class="dropdown-toggle">
+                     <em class="fa fa-user"></em>
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a>
+                        </li>
+                        <li><a href="#">Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">Logout</a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <aside class="aside">
+            <nav class="sidebar">
+               <ul class="nav">
+                  <li>
+                     <div data-toggle="collapse-next" class="item user-block has-submenu">
+                        <div class="user-block-picture">
+                           <img src="{% static 'app/img/user/02.jpg' %}" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle account-img-mb">
+                        </div>
+                        <div class="user-block-info">
+                           <span class="user-block-name item-text">James Franky</span>
+                           <span class="user-block-role"><i class="fa fa-check text-green"></i> Verified</span>
+                           <div class="label label-primary"><i class="fa fa-chevron-down"></i> Account Info</div>
+                        </div>
+                     </div>
+                     <ul class="nav collapse">
+                        <li><a href="javascript:void(0);">Open Orders</a>
+                        </li>
+                        <li><a href="javascript:void(0);">Transactions History</a>
+                        </li>
+                        <li>
+                           <a href="javascript:void(0);">
+                              Verification 
+                              <div class="label label-success pull-right"><i class="fa fa-check"></i> Verified</div>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="javascript:void(0);">
+                              2FA 
+                              <div class="pull-right label label-danger"><i class="fa fa-unlock"></i> Not Enabled</div>
+                           </a>
+                        </li>
+                        <li><a href="javascript:void(0);">Bonus Code</a>
+                        </li>
+                        <li><a href="javascript:void(0);">Activity Log</a>
+                        </li>
+                        <li><a href="javascript:void(0);">API</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:void(0);">Logout</a>
+                        </li>
+                     </ul>
+                  
+                  </li>
+                   <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-dashboard"></em>
+                        <span class="item-text">Dashboard</span>
+                     </a>
+                  </li>
+                   <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-th"></em>
+                        <span class="item-text">Snapshot</span>
+                     </a>
+                  </li>
+                  <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-clock-o"></em>
+                        <span class="item-text">Historical</span>
+                     </a>
+                  </li>
+                  <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-align-left"></em>
+                        <span class="item-text">Equity Levels</span>
+                     </a>
+                  </li>
+                  <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-bullseye"></em>
+                        <span class="item-text">Radar</span>
+                     </a>
+                  </li>
+                  <li >
+                     <a href="unusualvolume.html" title="Dashboard" class="">
+                        <em class="fa fa-exclamation-circle"></em>
+                        <span class="item-text">Unusual Volume</span>
+                     </a>
+                  </li>
+                  <li >
+                     <a href="#" title="Dashboard" class="">
+                        <em class="fa fa-adjust"></em>
+                        <span class="item-text">Top OI Change</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="Pages" data-toggle="collapse-next" class="has-submenu">
+                     <em class="fa fa-download"></em>
+                     <span class="item-text">Export Tool</span>
+                     </a>
+                    
+                  </li>
+                  <li class="active">
+                     <a href="charts.html" title="Dashboard" class="">
+                     <em class="fa fa-bar-chart"></em>
+                     <span class="item-text">Charts</span>
+                     </a>
+                    
+                  </li>
+                  <li>
+                     <a href="#" title="Pages" data-toggle="collapse-next" class="has-submenu">
+                     <em class="fa fa-question-circle"></em>
+                     <span class="item-text">Help</span>
+                     </a>
+                    
+                  </li>
+               </ul>
+            </nav>
+         </aside>
+         <section>
+            <section class="main-content">
+              
+               <form action="/uvolume/" method="post" id="systemFrom">
+                  <fieldset>
+                     <div class="form-group">
+                              <label class="col-sm-2 control-label">Enter the sticker of the stock</label>
+                              <div class="col-sm-10">
+                                 
+                                 <div class="input-group">
+                                    <input type="text" name="sticker">
+                                    
+                                    <label for="start">&nbsp;&nbsp;Start date:&nbsp;&nbsp;</label>
+
+<input type="date" id="start" name="data_start"
+       value="2018-07-22"
+       min="2017-01-01" max="2021-12-31">
+       <label for="start">&nbsp;&nbsp;End date:&nbsp;&nbsp;</label>
+
+<input type="date" id="end" name="data_end"
+       value="2018-07-22"
+       min="2017-01-01" max="2021-12-31">
+                                    <span class="input-group-btn">
+                                    <input type="submit" class="btn btn-primary" value="Go!">
+                                    </span>
+                                 </div>
+                              </div>
+                     </div>
+                  </fieldset>
+               </form>
+                           
+                    <!-- Chart Starts Here -->
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <div class="panel panel-default">
+                              <div class="panel-collapse">
+                                 <div class="panel-body">
+                                    <h4>BTC-SC</h4>
+                                    <div id="candlestickChart" class="h-500">
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Chart Ends Here -->
+            </section>
+         </section>
+      </section>
+      <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+      <script src="{% static 'plugins/velocity/velocity.js' %}"></script>
+      <script src="{% static 'plugins/velocity/velocity.ui.js' %}"></script>
+      <script src="{% static 'plugins/bootstrap/js/bootstrap.js' %}"></script>
+      <script src="{% static 'plugins/chosen/chosen.jquery.js' %}"></script>
+      <script src="{% static 'plugins/slider/js/bootstrap-slider.js' %}"></script>
+      <script src="{% static 'plugins/filestyle/bootstrap-filestyle.js' %}"></script>
+      <script src="{% static 'plugins/animo/animo.js' %}"></script>
+      <script src="{% static 'plugins/sparklines/jquery.sparkline.js' %}"></script>
+      <script src="{% static 'plugins/slimscroll/jquery.slimscroll.js' %}"></script>
+      <script src="{% static 'plugins/datatable/media/js/jquery.dataTables.js' %}"></script>
+      <script src="{% static 'plugins/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrap.js' %}"></script>
+      <script src="{% static 'plugins/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrapPagination.js' %}"></script>
+      <script src="{% static 'tradify/highcharts.js' %}"></script>
+      <script src="{% static 'tradify/exporting.js' %}"></script>
+      <script src="{% static 'plugins/datatable/extensions/ColVis/js/dataTables.colVis.js' %}"></script>
+      <!--[if lt IE 8]><script src="{% static 'js/excanvas.min.js' %}"></script><![endif]-->
+      <script src="{% static 'app/js/tradify.js' %}"></script>
+      <script>
+        $(document).ready(function () {
+$('#dtBasicExample').DataTable({
+   "scrollX": "50vh",
+
+});
+$('.dataTables_length').addClass('bs-select');
+});
+      </script>
+   </body>
+</html>
